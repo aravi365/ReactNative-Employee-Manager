@@ -6,7 +6,7 @@ import { CardSection } from './common/CardSection';
 import { Input } from './common/Input';
 import { Button } from './common/Button';
 import { Spinner } from './common/Spinner';
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 
 class LoginForm extends Component {
     onEmailChange(text) {
@@ -46,16 +46,13 @@ class LoginForm extends Component {
     render(){
         return(
             <Card>
-
                 <CardSection>
                 <Input
                     label = "Email"
                     placeholder= "username@gmail.com"
                     onChangeText={this.onEmailChange.bind(this)}
-                    value={ this.props.email }
-                />
+                    value={ this.props.email } />
                 </CardSection>
-               
                 <CardSection>
                     <Input
                     secureTextEntry
@@ -64,7 +61,9 @@ class LoginForm extends Component {
                     onChangeText={this.onPasswordChange.bind(this)}
                     value={this.props.password}
                 />
+                
                 </CardSection>
+                
                 {this.renderError()} 
                 <CardSection>
                   {this.renderButton()}
