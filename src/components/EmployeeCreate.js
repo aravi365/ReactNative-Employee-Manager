@@ -12,7 +12,7 @@ import {Button} from './common/Button';
 class EmployeeCreate extends Component {
     onButtonPress() {
         const { name,phone, shift } = this.props;
-        this.props.employeeCreate({ name,phone,shift: shift || 'Monday' });
+        this.props.employeeCreate({ name,phone, shift: shift || 'Monday' });
     }
     render(){
         return(
@@ -35,11 +35,12 @@ class EmployeeCreate extends Component {
               />
         </CardSection>
 
-    <CardSection style={{ flexDirection: 'column' }}>
+    <CardSection style={{ flexDirection: 'column'}}>
         <Text style={styles.pickerTextStyle}>Shift</Text>
 
         <Picker
         style={{ flex:1 }}
+        style={{height:40}}
         selectedValue = {this.props.shift}
         onValueChange = {value => this.props.employeeUpdate({ prop:'shift', value}) }
         >
